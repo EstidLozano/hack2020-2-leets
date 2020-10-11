@@ -47,7 +47,7 @@ a {
 	font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
+	color: #ffffff;
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
@@ -164,14 +164,15 @@ iframe {
   background: linear-gradient(45deg,#EB6E34, #e07e51);
   
 }
-
+/*------------------------------------------------------------------
+[ TAMAÑO FORM]*/
 .wrap-contact100 {
   width: 800px;
-  height: 1500px;
+  height: 1650px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding: 42px 55px 45px 55px;
+  padding: 42px 55px 45px 55px; 
 }
 
 
