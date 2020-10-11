@@ -46,7 +46,7 @@ public class FirebaseApi {
     public void init() {
         FileInputStream serviceAccount = null;
         try {
-            serviceAccount = new FileInputStream("path/to/serviceAccountKey.json");
+            serviceAccount = new FileInputStream("./serviceAccountKey.json");
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .setDatabaseUrl("https://hack2020-2-leets.firebaseio.com")
