@@ -17,6 +17,7 @@ import com.leets.model.Registraduria;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * 
@@ -44,9 +45,10 @@ public class FirebaseApi {
 	}
     
     public void init() {
-        FileInputStream serviceAccount = null;
+        InputStream serviceAccount = null;
         try {
-            serviceAccount = new FileInputStream("serviceAccountKey.json");
+            serviceAccount = this.getClass().getClassLoader()
+            		.getResourceAsStream("serviceAccountKey.json");
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .setDatabaseUrl("https://hack2020-2-leets.firebaseio.com")
