@@ -20,18 +20,18 @@ public class Inscrito {
 			TELEFONO = "telefono",
 			ZONA = "zona";
 	
-	private String departamento;
-	private String direccion;
-	private int estrato; // dane
-	private String f_nacimiento; // registraduria
-	private String[] familiares;
-	private int id;
-	private int ingresos;
-	private String municipio;
-	private String nombre; // registraduria
-	private int sisben; // dane
-	private int telefono;
-	private String zona;
+	public String departamento;
+	public String direccion;
+	public int estrato; // dane
+	public String f_nacimiento; // registraduria
+	public String[] familiares;
+	public int id;
+	public int ingresos;
+	public String municipio;
+	public String nombre; // registraduria
+	public int sisben; // dane
+	public int telefono;
+	public String zona;
 	
 	public Inscrito(String departamento, String direccion, String[] familiares,
 			int id, int ingresos, String municipio, int telefono, String zona) {
