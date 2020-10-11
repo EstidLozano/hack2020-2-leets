@@ -23,9 +23,11 @@ public class Main extends HttpServlet{
         setAccessControlHeaders(response);
         try {
             String options = "abcdefghijklmnopqrs",
+            		digits = "amnpr",
                     option = request.getParameter("option");
             if(option != null && options.contains(option)) {
-                String input = request.getParameter("input");
+                String input = request.getParameter(digits
+                		.contains(option)? "Digits" : "SpeechResult");
                 if (input != null) {
                     System.out.println(option);
                     System.out.println(input);

@@ -27,7 +27,6 @@ public class Flow {
     }
 
     public void exec(String option, String input) throws IOException {
-        String digits = "amnp";
         FirebaseApi fbApi = FirebaseApi.getInstance();
         if(option.contains("a")) {
         	Inscrito inscrito = fbApi.obtenerInscrito(input);
