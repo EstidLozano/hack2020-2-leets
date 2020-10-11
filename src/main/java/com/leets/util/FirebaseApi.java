@@ -38,6 +38,10 @@ public class FirebaseApi {
 		}
 		return instance;
 	}
+	
+	private FirebaseApi() {
+		init();
+	}
     
     public void init() {
         FileInputStream serviceAccount = null;
