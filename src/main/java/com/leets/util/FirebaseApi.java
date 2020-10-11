@@ -158,6 +158,7 @@ public class FirebaseApi {
 			DocumentSnapshot doc = future.get();
 			System.out.println(String.valueOf(doc));
 			if(doc.exists()) {
+				System.out.println("doc exist");
 				inscrito = doc.toObject(Inscrito.class);
 			}
 		} catch (Exception e) {
