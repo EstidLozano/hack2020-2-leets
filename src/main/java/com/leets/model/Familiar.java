@@ -15,6 +15,9 @@ public class Familiar {
 	private String parentesco;
 	private String tipoId;
 	
+	public Familiar() {
+	}
+	
 	public Familiar(int id, String parentesco, String tipoId) {
 		this.id = id;
 		this.parentesco = parentesco;

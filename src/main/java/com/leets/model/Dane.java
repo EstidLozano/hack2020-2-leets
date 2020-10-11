@@ -15,6 +15,9 @@ public class Dane {
 	private int id;
 	private int sisben;
 	
+	public Dane() {
+	}
+	
 	public Dane(int estrato, int id, int sisben) {
 		this.estrato = estrato;
 		this.id = id;

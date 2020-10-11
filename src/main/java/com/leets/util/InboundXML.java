@@ -32,13 +32,83 @@ public class InboundXML {
             /*p*/ID_INTEGRANTE = "http://cloud.zang.io/data/inboundxml/e9667bda8c7777fb138eef586c8a46b44b8e3e04",
             /*q*/PARENTESCO = "http://cloud.zang.io/data/inboundxml/18e92b51aefe99affbaae5b708a92a690556713d",
             /*r*/TELEFONO = "http://cloud.zang.io/data/inboundxml/8c01d55cf3a1553ffa02697824202e255f5de6e7",
-            /*s*/ID_INVALIDO = "http://cloud.zang.io/data/inboundxml/f9dcddb4990f57e77c570e238af7e854a7ae0d7f",
-            /*t*/ERROR = "https://cloud.zang.io/data/inboundxml/713432ea4a491a93ea4bad809f7e75336ff6ddd1";
+            ///*s*/ID_INVALIDO = "http://cloud.zang.io/data/inboundxml/f9dcddb4990f57e77c570e238af7e854a7ae0d7f",
+            /*z*/ERROR = "https://cloud.zang.io/data/inboundxml/713432ea4a491a93ea4bad809f7e75336ff6ddd1";
 
     public static void redirectHacerRegistro(HttpServletResponse response,
             int id, String nombre) throws IOException {
         String xml = "<Response>" + "<Redirect method=\"GET\">" + HACER_REGISTRO
                     + "?id=" + id + "&amp;nombre=" + nombre + "</Redirect>" + "</Response>";
+        response.getWriter().println(xml);
+    }
+    
+    public static void redirectDepartamento(HttpServletResponse response,
+            int id) throws IOException {
+        String xml = "<Response>" + "<Redirect method=\"GET\">" + DEPARTAMENTO
+                    + "?id=" + id + "</Redirect>" + "</Response>";
+        response.getWriter().println(xml);
+    }
+    
+    public static void redirectMunicipio(HttpServletResponse response,
+            int id) throws IOException {
+        String xml = "<Response>" + "<Redirect method=\"GET\">" + MUNICIPIO
+                    + "?id=" + id + "</Redirect>" + "</Response>";
+        response.getWriter().println(xml);
+    }
+    
+    public static void redirectDireccion(HttpServletResponse response,
+            int id) throws IOException {
+        String xml = "<Response>" + "<Redirect method=\"GET\">" + DIRECCION
+                    + "?id=" + id + "</Redirect>" + "</Response>";
+        response.getWriter().println(xml);
+    }
+    
+    public static void redirectZona(HttpServletResponse response,
+            int id) throws IOException {
+        String xml = "<Response>" + "<Redirect method=\"GET\">" + ZONA
+                    + "?id=" + id + "</Redirect>" + "</Response>";
+        response.getWriter().println(xml);
+    }
+    
+    public static void redirectIngresos(HttpServletResponse response,
+            int id) throws IOException {
+        String xml = "<Response>" + "<Redirect method=\"GET\">" + INGRESOS
+                    + "?id=" + id + "</Redirect>" + "</Response>";
+        response.getWriter().println(xml);
+    }
+    
+    public static void redirectIntegrantes(HttpServletResponse response,
+            int id) throws IOException {
+        String xml = "<Response>" + "<Redirect method=\"GET\">" + INTEGRANTES
+                    + "?id=" + id + "</Redirect>" + "</Response>";
+        response.getWriter().println(xml);
+    }
+    
+    public static void redirectTipoIdIntegrante(HttpServletResponse response,
+            int id, int n) throws IOException {
+        String xml = "<Response>" + "<Redirect method=\"GET\">" + TIPO_ID_INTEGRANTE
+                    + "?id=" + id + "&amp;n=" + n + "</Redirect>" + "</Response>";
+        response.getWriter().println(xml);
+    }
+    
+    public static void redirectIdIntegrante(HttpServletResponse response,
+            int id, int n) throws IOException {
+        String xml = "<Response>" + "<Redirect method=\"GET\">" + ID_INTEGRANTE
+                    + "?id=" + id + "&amp;n=" + n + "</Redirect>" + "</Response>";
+        response.getWriter().println(xml);
+    }
+    
+    public static void redirectParentesco(HttpServletResponse response,
+            int id, int n) throws IOException {
+        String xml = "<Response>" + "<Redirect method=\"GET\">" + PARENTESCO
+                    + "?id=" + id + "&amp;n=" + n + "</Redirect>" + "</Response>";
+        response.getWriter().println(xml);
+    }
+    
+    public static void redirectTelefono(HttpServletResponse response,
+            int id) throws IOException {
+        String xml = "<Response>" + "<Redirect method=\"GET\">" + TELEFONO
+                    + "?id=" + id + "</Redirect>" + "</Response>";
         response.getWriter().println(xml);
     }
     

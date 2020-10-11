@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
+import com.leets.model.Dane;
+import com.leets.model.Familiar;
 import com.leets.model.Inscrito;
 import com.leets.model.Registraduria;
 import com.leets.util.CPaaSApi;
@@ -38,6 +40,8 @@ public class Flow {
         			InboundXML.redirectHacerRegistro(response,
         					registraduria.getId(), registraduria.getNombre());
         		}
+        	} else {
+        		// B
         	}
         } else if(option.contains("b")) {
             
@@ -52,19 +56,58 @@ public class Flow {
         } else if(option.contains("g")) {
             
         } else if(option.contains("h")) {
-            
+            if(input.equals("sí")) {
+            	String id = request.getParameter(Inscrito.ID);
+            	Familiar familiar = fbApi.obtenerFamiliar(id);
+            	if(familiar == null) {
+            		Inscrito inscrito = new Inscrito();
+                	inscrito.setId(Integer.parseInt(id));
+                	Dane dane = fbApi.obtenerDane(id);
+                	inscrito.setEstrato(dane.getEstrato());
+                	inscrito.setSisben(dane.getSisben());
+                	Registraduria registraduria = fbApi.obtenerRegistraduria(id);
+                	inscrito.setF_nacimiento(registraduria.getF_nacimiento());
+                	inscrito.setNombre(registraduria.getNombre());
+                	fbApi.guardarInscrito(inscrito);
+                	InboundXML.redirectDepartamento(response, inscrito.getId());
+            	} else {
+            		InboundXML.redirectError(response,
+            				"Se encuentra previamente inscrito como beneficiario.");
+            	}
+            } else if(input.equals("no")) {
+            	InboundXML.redirectXML(response, InboundXML.ID);
+            } else {
+            	InboundXML.redirectError(response, "Opción Desconocida");
+            }
         } else if(option.contains("i")) {
-            
+        	String id = request.getParameter(Inscrito.ID);
+        	fbApi.actualizarInscrito(id, Inscrito.DEPARTAMENTO, input);
+        	InboundXML.redirectMunicipio(response, Integer.parseInt(id));
         } else if(option.contains("j")) {
-            
+        	String id = request.getParameter(Inscrito.ID);
+        	fbApi.actualizarInscrito(id, Inscrito.MUNICIPIO, input);
+        	InboundXML.redirectDireccion(response, Integer.parseInt(id));
         } else if(option.contains("k")) {
-            
+        	String id = request.getParameter(Inscrito.ID);
+        	fbApi.actualizarInscrito(id, Inscrito.DIRECCION, input);
+        	InboundXML.redirectZona(response, Integer.parseInt(id));
         } else if(option.contains("l")) {
-            
+        	String id = request.getParameter(Inscrito.ID);
+        	fbApi.actualizarInscrito(id, Inscrito.ZONA, input);
+        	InboundXML.redirectIngresos(response, Integer.parseInt(id));
         } else if(option.contains("m")) {
-            
+        	String id = request.getParameter(Inscrito.ID);
+        	fbApi.actualizarInscrito(id, Inscrito.INGRESOS, input);
+        	InboundXML.redirectIntegrantes(response, Integer.parseInt(id));
         } else if(option.contains("n")) {
-            
+        	String id = request.getParameter(Inscrito.ID);
+        	fbApi.actualizarInscrito(id, Inscrito.INTEGRANTES, input);
+        	if(Integer.parseInt(input) == 0) {
+        		InboundXML.redirectTelefono(response, Integer.parseInt(id));
+        	} else {
+        		InboundXML.redirectTipoIdIntegrante(response,
+        				Integer.parseInt(id), Integer.parseInt(input));
+        	}
         } else if(option.contains("o")) {
             
         } else if(option.contains("p")) {
@@ -72,8 +115,6 @@ public class Flow {
         } else if(option.contains("q")) {
             
         } else if(option.contains("r")) {
-            
-        } else if(option.contains("s")) {
             
         }
     }

@@ -13,7 +13,7 @@ public class Inscrito {
 			DIRECCION = "direccion",
 			ESTRATO = "estrato",
 			F_NACIMIENTO = "f_nacimiento",
-			FAMILIARES = "familiares",
+			INTEGRANTES = "familiares",
 			ID = "id",
 			INGRESOS = "ingresos",
 			MUNICIPIO = "municipio",
@@ -22,18 +22,18 @@ public class Inscrito {
 			TELEFONO = "telefono",
 			ZONA = "zona";
 	
-	public String departamento;
-	public String direccion;
-	public int estrato; // dane
-	public String f_nacimiento; // registraduria
-	public List<Integer> familiares;
-	public int id;
-	public int ingresos;
-	public String municipio;
-	public String nombre; // registraduria
-	public int sisben; // dane
-	public int telefono;
-	public String zona;
+	private String departamento;
+	private String direccion;
+	private int estrato; // dane
+	private String f_nacimiento; // registraduria
+	private List<Integer> familiares;
+	private int id;
+	private int ingresos;
+	private String municipio;
+	private String nombre; // registraduria
+	private int sisben; // dane
+	private int telefono;
+	private String zona;
 	
 	public Inscrito() {
 	}

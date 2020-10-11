@@ -15,6 +15,9 @@ public class Registraduria {
 	private int id;
 	private String nombre;
 	
+	public Registraduria() {
+	}
+	
 	public Registraduria(String f_nacimiento, int id, String nombre) {
 		this.f_nacimiento = f_nacimiento;
 		this.id = id;
