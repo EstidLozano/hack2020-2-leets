@@ -26,7 +26,7 @@ public class Inscrito {
 	public String direccion;
 	public int estrato; // dane
 	public String f_nacimiento; // registraduria
-	public List<String> familiares;
+	public List<Integer> familiares;
 	public int id;
 	public int ingresos;
 	public String municipio;
@@ -38,7 +38,7 @@ public class Inscrito {
 	public Inscrito() {
 	}
 	
-	public Inscrito(String departamento, String direccion, List<String> familiares,
+	public Inscrito(String departamento, String direccion, List<Integer> familiares,
 			int id, int ingresos, String municipio, int telefono, String zona) {
 		this.departamento = departamento;
 		this.direccion = direccion;
@@ -82,11 +82,11 @@ public class Inscrito {
 		this.f_nacimiento = f_nacimiento;
 	}
 
-	public List<String> getFamiliares() {
+	public List<Integer> getFamiliares() {
 		return familiares;
 	}
 
-	public void setFamiliares(List<String> familiares) {
+	public void setFamiliares(List<Integer> familiares) {
 		this.familiares = familiares;
 	}
 
