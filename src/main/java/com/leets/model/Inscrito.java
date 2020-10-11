@@ -1,5 +1,7 @@
 package com.leets.model;
 
+import java.util.List;
+
 /**
 *
 * @author estidlore
@@ -24,7 +26,7 @@ public class Inscrito {
 	public String direccion;
 	public int estrato; // dane
 	public String f_nacimiento; // registraduria
-	public String[] familiares;
+	public List<String> familiares;
 	public int id;
 	public int ingresos;
 	public String municipio;
@@ -36,7 +38,7 @@ public class Inscrito {
 	public Inscrito() {
 	}
 	
-	public Inscrito(String departamento, String direccion, String[] familiares,
+	public Inscrito(String departamento, String direccion, List<String> familiares,
 			int id, int ingresos, String municipio, int telefono, String zona) {
 		this.departamento = departamento;
 		this.direccion = direccion;
@@ -80,11 +82,11 @@ public class Inscrito {
 		this.f_nacimiento = f_nacimiento;
 	}
 
-	public String[] getFamiliares() {
+	public List<String> getFamiliares() {
 		return familiares;
 	}
 
-	public void setFamiliares(String[] familiares) {
+	public void setFamiliares(List<String> familiares) {
 		this.familiares = familiares;
 	}
 
