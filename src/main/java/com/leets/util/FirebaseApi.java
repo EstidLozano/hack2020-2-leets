@@ -46,13 +46,14 @@ public class FirebaseApi {
     public void init() {
         FileInputStream serviceAccount = null;
         try {
-            serviceAccount = new FileInputStream("./serviceAccountKey.json");
+            serviceAccount = new FileInputStream("serviceAccountKey.json");
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .setDatabaseUrl("https://hack2020-2-leets.firebaseio.com")
                     .build();
             FirebaseApp.initializeApp(options);
-        } catch (IOException ex) {
+        } catch (IOException e) {
+        	System.out.println("Error " + e.toString());
         }
     }
     
@@ -63,7 +64,7 @@ public class FirebaseApi {
     	try {
 			return future.get().getUpdateTime().toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Error " + e.toString());
 			return null;
 		}
     }
@@ -75,7 +76,7 @@ public class FirebaseApi {
     	try {
 			return future.get().getUpdateTime().toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Error " + e.toString());
 			return null;
 		}
     }
@@ -86,7 +87,7 @@ public class FirebaseApi {
     	try {
 			return future.get().getUpdateTime().toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Error " + e.toString());
 		}
     	return null;
     }
@@ -97,7 +98,7 @@ public class FirebaseApi {
     	try {
 			return future.get().getUpdateTime().toString();
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Error " + e.toString());
 		}
     	return null;
     }
@@ -113,7 +114,7 @@ public class FirebaseApi {
 				dane = doc.toObject(Dane.class);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Error " + e.toString());
 		}
     	return dane;
     }
@@ -129,7 +130,7 @@ public class FirebaseApi {
 				familiar = doc.toObject(Familiar.class);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Error " + e.toString());
 		}
     	return familiar;
     }
@@ -145,7 +146,7 @@ public class FirebaseApi {
 				inscrito = doc.toObject(Inscrito.class);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Error " + e.toString());
 		}
     	return inscrito;
     }
@@ -161,7 +162,7 @@ public class FirebaseApi {
 				registraduria = doc.toObject(Registraduria.class);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Error " + e.toString());
 		}
     	return registraduria;
     }
