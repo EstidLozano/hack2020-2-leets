@@ -22,11 +22,11 @@ import org.json.JSONObject;
 public class CPaaSApi {
 
     public JSONObject getCarrierLookUpPorTelefono(String telefono) throws IOException {
-        final String URI = "https://api.zang.io/v2/Accounts/" + Constants.ACCOUNT_SID + "/Lookups/Carrier.json";
+        final String URI = "https://api.zang.io/v2/Accounts/" + Consts.ACCOUNT_SID + "/Lookups/Carrier.json";
         final CloseableHttpClient client = HttpClients.createDefault();
         final HttpPost postMethod = new HttpPost(URI);
 
-        postMethod.addHeader("Authorization", Constants.CPAAS_TOKEN);
+        postMethod.addHeader("Authorization", Consts.CPAAS_TOKEN);
         postMethod.addHeader("Content-Type", "application/x-www-form-urlencoded");
 
         List<NameValuePair> formparams = new ArrayList<>();
@@ -48,15 +48,15 @@ public class CPaaSApi {
     }
 
     public JSONObject sendSMSPinRandom(String pinRandom, String to) throws IOException {
-        final String URI = "https://api.zang.io/v2/Accounts/" + Constants.ACCOUNT_SID + "/SMS/Messages.json";
+        final String URI = "https://api.zang.io/v2/Accounts/" + Consts.ACCOUNT_SID + "/SMS/Messages.json";
         final CloseableHttpClient client = HttpClients.createDefault();
         final HttpPost postMethod = new HttpPost(URI);
 
-        postMethod.addHeader("Authorization", Constants.CPAAS_TOKEN);
+        postMethod.addHeader("Authorization", Consts.CPAAS_TOKEN);
         postMethod.addHeader("Content-Type", "application/x-www-form-urlencoded");
 
         List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-        formparams.add(new BasicNameValuePair("From", Constants.SMS_NUMBER));
+        formparams.add(new BasicNameValuePair("From", Consts.SMS_NUMBER));
         formparams.add(new BasicNameValuePair("To", to));
         formparams.add(new BasicNameValuePair("Body", pinRandom));
         UrlEncodedFormEntity entity = new UrlEncodedFormEntity(formparams, Consts.ISO_8859_1);

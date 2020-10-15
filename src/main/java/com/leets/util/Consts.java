@@ -5,7 +5,7 @@ package com.leets.util;
  *
  * @author umansilla
  */
-public class Constants {
+public class Consts {
     public final static String
     		FQDN = "breeze2-196.collaboratory.avaya.com",
     		CUENTA = "grupo.dos@sedemocloud.com",

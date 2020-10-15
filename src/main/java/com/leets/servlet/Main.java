@@ -7,8 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.leets.util.InboundXML;
-import static com.leets.util.InboundXML.ERROR;
+import com.leets.util.XML;
 
 /**
 *
@@ -22,23 +21,33 @@ public class Main extends HttpServlet{
            throws ServletException, IOException {
         setAccessControlHeaders(response);
         try {
-            String options = "abcdefghijklmnopqrs",
-            		digits = "amnpr",
-                    option = request.getParameter("option");
-            if(option != null && options.contains(option)) {
-                String input = request.getParameter(digits
-                		.contains(option)? "Digits" : "SpeechResult");
-                if (input != null) {
-                    System.out.println(option);
+            String xml = request.getParameter("xml");
+            if(xml != null) {
+                // gets the user input
+                String input = request.getParameter("SpeechResult");
+                if(input == null) {
+                    input = request.getParameter("Digits");
+                }
+                // redirect
+                if(input == null) {
+                    XML.redirectXML(response, XML.ERROR, new String[][]{
+                            {"causa", "Entrada inválida"}
+                    });
+                } else {
+                    System.out.println(xml);
                     System.out.println(input);
-                    new Flow(response, request).exec(option, input);
+                    new Flow(response, request).exec(xml, input);
                 }
             } else {
-                InboundXML.redirectError(response, "Opción inválida");
+                XML.redirectXML(response, XML.ERROR, new String[][]{
+                        {"causa", "Error desconocido"}
+                });
             }
-       } catch (Exception e) {
+       } catch (IOException e) {
            System.out.println("Error " + e.toString());
-           InboundXML.redirectError(response, "Error en el servidor");
+           XML.redirectXML(response, XML.ERROR, new String[][]{
+                    {"causa", "Error en el servidor"}
+            });
        }
    }
 

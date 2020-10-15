@@ -8,142 +8,142 @@ import java.util.List;
 */
 public class Inscrito {
 	
-	public final static String
-			DEPARTAMENTO = "departamento",
-			DIRECCION = "direccion",
-			ESTRATO = "estrato",
-			F_NACIMIENTO = "f_nacimiento",
-			INTEGRANTES = "familiares",
-			ID = "id",
-			INGRESOS = "ingresos",
-			MUNICIPIO = "municipio",
-			NOMBRE = "nombre",
-			SISBEN = "sisben",
-			TELEFONO = "telefono",
-			ZONA = "zona";
-	
-	private String departamento;
-	private String direccion;
-	private int estrato; // dane
-	private String f_nacimiento; // registraduria
-	private List<Integer> familiares;
-	private int id;
-	private int ingresos;
-	private String municipio;
-	private String nombre; // registraduria
-	private int sisben; // dane
-	private int telefono;
-	private String zona;
-	
-	public Inscrito() {
-	}
-	
-	public Inscrito(String departamento, String direccion, List<Integer> familiares,
-			int id, int ingresos, String municipio, int telefono, String zona) {
-		this.departamento = departamento;
-		this.direccion = direccion;
-		this.familiares = familiares;
-		this.id = id;
-		this.ingresos = ingresos;
-		this.municipio = municipio;
-		this.telefono = telefono;
-		this.zona = zona;
-	}
+    public final static String
+            DEPARTAMENTO = "departamento",
+            DIRECCION = "dirección",
+            ESTRATO = "estrato",
+            F_NACIMIENTO = "f_nacimiento",
+            INTEGRANTES = "familiares",
+            ID = "id",
+            INGRESOS = "ingresos",
+            MUNICIPIO = "municipio",
+            NOMBRE = "nombre",
+            SISBEN = "sisbén",
+            TELEFONO = "teléfono",
+            ZONA = "zona";
 
-	public String getDepartamento() {
-		return departamento;
-	}
+    private String departamento;
+    private String direccion;
+    private int estrato; // dane
+    private String f_nacimiento; // registraduria
+    private List<Integer> familiares;
+    private int id;
+    private int ingresos;
+    private String municipio;
+    private String nombre; // registraduria
+    private int sisben; // dane
+    private int telefono;
+    private String zona;
 
-	public void setDepartamento(String departamento) {
-		this.departamento = departamento;
-	}
+    public Inscrito() {
+    }
 
-	public String getDireccion() {
-		return direccion;
-	}
+    public Inscrito(String departamento, String direccion, List<Integer> familiares,
+                    int id, int ingresos, String municipio, int telefono, String zona) {
+        this.departamento = departamento;
+        this.direccion = direccion;
+        this.familiares = familiares;
+        this.id = id;
+        this.ingresos = ingresos;
+        this.municipio = municipio;
+        this.telefono = telefono;
+        this.zona = zona;
+    }
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
+    public String getDepartamento() {
+        return departamento;
+    }
 
-	public int getEstrato() {
-		return estrato;
-	}
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
 
-	public void setEstrato(int estrato) {
-		this.estrato = estrato;
-	}
+    public String getDireccion() {
+        return direccion;
+    }
 
-	public String getF_nacimiento() {
-		return f_nacimiento;
-	}
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
 
-	public void setF_nacimiento(String f_nacimiento) {
-		this.f_nacimiento = f_nacimiento;
-	}
+    public int getEstrato() {
+        return estrato;
+    }
 
-	public List<Integer> getFamiliares() {
-		return familiares;
-	}
+    public void setEstrato(int estrato) {
+        this.estrato = estrato;
+    }
 
-	public void setFamiliares(List<Integer> familiares) {
-		this.familiares = familiares;
-	}
+    public String getF_nacimiento() {
+        return f_nacimiento;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public void setF_nacimiento(String f_nacimiento) {
+        this.f_nacimiento = f_nacimiento;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public List<Integer> getFamiliares() {
+        return familiares;
+    }
 
-	public int getIngresos() {
-		return ingresos;
-	}
+    public void setFamiliares(List<Integer> familiares) {
+        this.familiares = familiares;
+    }
 
-	public void setIngresos(int ingresos) {
-		this.ingresos = ingresos;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getMunicipio() {
-		return municipio;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setMunicipio(String municipio) {
-		this.municipio = municipio;
-	}
+    public int getIngresos() {
+        return ingresos;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public void setIngresos(int ingresos) {
+        this.ingresos = ingresos;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public String getMunicipio() {
+        return municipio;
+    }
 
-	public int getSisben() {
-		return sisben;
-	}
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
+    }
 
-	public void setSisben(int sisben) {
-		this.sisben = sisben;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public int getTelefono() {
-		return telefono;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public void setTelefono(int telefono) {
-		this.telefono = telefono;
-	}
+    public int getSisben() {
+        return sisben;
+    }
 
-	public String getZona() {
-		return zona;
-	}
+    public void setSisben(int sisben) {
+        this.sisben = sisben;
+    }
 
-	public void setZona(String zona) {
-		this.zona = zona;
-	}
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getZona() {
+        return zona;
+    }
+
+    public void setZona(String zona) {
+        this.zona = zona;
+    }
 
 }
