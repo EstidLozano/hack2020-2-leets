@@ -20,9 +20,9 @@ import org.json.JSONObject;
 public class CPaaSWorkshopApi {
 
     public JSONObject obtenerUsuarioPorNumeroDeCuenta(String numeroDeCuenta) throws IOException {
-        final String URI = "https://" + Consts.FQDN
+        final String URI = "https://" + Constants.FQDN
                 + "/services/AAADEVCPaaSWorkShopAPI/ws/usuarios/" + numeroDeCuenta + "/numerodecuenta?cuenta="
-                + Consts.CUENTA;
+                + Constants.CUENTA;
 
         final CloseableHttpClient client = HttpClients.createDefault();
         final HttpGet getMethod = new HttpGet(URI);
@@ -38,12 +38,12 @@ public class CPaaSWorkshopApi {
     }
 
     public JSONObject crearNuevoPinRandomAUsuarioPorNumeroDeCuenta(String numeroDeCuenta) throws IOException {
-        final String URI = "https://" + Consts.FQDN
+        final String URI = "https://" + Constants.FQDN
                 + "/services/AAADEVCPaaSWorkShopAPI/ws/usuarios/" + numeroDeCuenta + "/randomPIN";
         final CloseableHttpClient client = HttpClients.createDefault();
         final HttpPut putMethod = new HttpPut(URI);
 
-        putMethod.addHeader("Authorization", "Bearer " + Consts.TOKEN);
+        putMethod.addHeader("Authorization", "Bearer " + Constants.TOKEN);
         putMethod.addHeader("Content-Type", "application/json");
         final HttpResponse response = client.execute(putMethod);
         final BufferedReader inputStream = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
@@ -57,12 +57,12 @@ public class CPaaSWorkshopApi {
     }
 
     public JSONObject validarElPinRandomPorNumeroDeCuenta(String numeroDeCuenta, String digitos) throws IOException {
-        final String URI = "https://" + Consts.FQDN
+        final String URI = "https://" + Constants.FQDN
                 + "/services/AAADEVCPaaSWorkShopAPI/ws/usuarios/" + numeroDeCuenta + "/randomPIN";
         final CloseableHttpClient client = HttpClients.createDefault();
         final HttpPost postMethod = new HttpPost(URI);
         JSONObject jsonPayLoad = new JSONObject().put("pinRandom", digitos);
-        postMethod.addHeader("Authorization", "Bearer " + Consts.TOKEN);
+        postMethod.addHeader("Authorization", "Bearer " + Constants.TOKEN);
         postMethod.addHeader("Content-Type", "application/json");
         final StringEntity payload = new StringEntity(jsonPayLoad.toString(), StandardCharsets.ISO_8859_1);
         postMethod.setEntity(payload);
