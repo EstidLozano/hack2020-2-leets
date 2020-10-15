@@ -15,41 +15,51 @@ import com.leets.util.XML;
 */
 public class Main extends HttpServlet{
    private static final long serialVersionUID = 1L;
-	
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        handle(req, resp);
+    }
+   
    @Override
-   protected void doPost(HttpServletRequest request, HttpServletResponse response)
+   protected void doPost(HttpServletRequest req, HttpServletResponse resp)
            throws ServletException, IOException {
-        setAccessControlHeaders(response);
+        handle(req, resp);
+    }
+   
+   private void handle(HttpServletRequest req, HttpServletResponse resp)
+           throws ServletException, IOException{
+        setAccessControlHeaders(resp);
         try {
-            String xml = request.getParameter("xml");
+            String xml = req.getParameter("xml");
             if(xml != null) {
                 // gets the user input
-                String input = request.getParameter("SpeechResult");
+                String input = req.getParameter("SpeechResult");
                 if(input == null) {
-                    input = request.getParameter("Digits");
+                    input = req.getParameter("Digits");
                 }
                 // redirect
                 if(input == null) {
-                    XML.redirectXML(response, XML.ERROR, new String[][]{
-                            {"causa", "Entrada inválida"}
+                    XML.redirectXML(resp, XML.ERROR, new String[][]{
+                        {"causa", "Entrada inválida"}
                     });
                 } else {
-                    System.out.println(xml);
-                    System.out.println(input);
-                    new Flow(response, request).exec(xml, input);
+                    System.out.println("xml: " + xml + " input: " + input);
+                    new Flow(resp, req).exec(xml, input);
                 }
             } else {
-                XML.redirectXML(response, XML.ERROR, new String[][]{
-                        {"causa", "Error desconocido"}
+                XML.redirectXML(resp, XML.ERROR, new String[][]{
+                    {"causa", "Error desconocido"}
                 });
             }
-       } catch (IOException e) {
+        } catch (IOException e) {
            System.out.println("Error " + e.toString());
-           XML.redirectXML(response, XML.ERROR, new String[][]{
-                    {"causa", "Error en el servidor"}
+            XML.redirectXML(resp, XML.ERROR, new String[][]{
+                {"causa", "Error en el servidor"}
             });
-       }
-   }
+        }
+    }
 
    private void setAccessControlHeaders(HttpServletResponse response) {
        response.setHeader("Access-Control-Allow-Origin", "*");
@@ -57,5 +67,5 @@ public class Main extends HttpServlet{
        response.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With");
        response.setHeader("Content-Type", "application/xml; charset=utf-8");
-   }
+    }
 }

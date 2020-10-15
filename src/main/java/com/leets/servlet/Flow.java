@@ -37,63 +37,63 @@ public class Flow {
             }
         } else if(xml.equals("registro")) {
             XML.redirectXML(response, XML.DEPARTAMENTO, new String[][]{
-                    {Inscrito.ID, input}
+                {Inscrito.ID, input}
             });
         } else if(xml.equals(Inscrito.DEPARTAMENTO)) {
             XML.redirectXML(response, XML.MUNICIPIO, new String[][]{
-                    {Inscrito.ID, request.getParameter(Inscrito.ID)},
-                    {Inscrito.DEPARTAMENTO, input}
+                {Inscrito.ID, request.getParameter(Inscrito.ID)},
+                {Inscrito.DEPARTAMENTO, input}
             });
         } else if(xml.equals(Inscrito.MUNICIPIO)) {
             XML.redirectXML(response, XML.DIRECCION, new String[][]{
-                    {Inscrito.ID, request.getParameter(Inscrito.ID)},
-                    {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
-                    {Inscrito.MUNICIPIO, input}
+                {Inscrito.ID, request.getParameter(Inscrito.ID)},
+                {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
+                {Inscrito.MUNICIPIO, input}
             });
         } else if(xml.equals(Inscrito.DIRECCION)) {
             XML.redirectXML(response, XML.ZONA, new String[][]{
-                    {Inscrito.ID, request.getParameter(Inscrito.ID)},
-                    {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
-                    {Inscrito.MUNICIPIO, request.getParameter(Inscrito.MUNICIPIO)},
-                    {Inscrito.DIRECCION, input}
+                {Inscrito.ID, request.getParameter(Inscrito.ID)},
+                {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
+                {Inscrito.MUNICIPIO, request.getParameter(Inscrito.MUNICIPIO)},
+                {Inscrito.DIRECCION, input}
             });
         } else if(xml.equals(Inscrito.ZONA)) {
             XML.redirectXML(response, XML.TELEFONO, new String[][]{
-                    {Inscrito.ID, request.getParameter(Inscrito.ID)},
-                    {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
-                    {Inscrito.MUNICIPIO, request.getParameter(Inscrito.MUNICIPIO)},
-                    {Inscrito.DIRECCION, request.getParameter(Inscrito.DIRECCION)},
-                    {Inscrito.ZONA, input}
+                {Inscrito.ID, request.getParameter(Inscrito.ID)},
+                {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
+                {Inscrito.MUNICIPIO, request.getParameter(Inscrito.MUNICIPIO)},
+                {Inscrito.DIRECCION, request.getParameter(Inscrito.DIRECCION)},
+                {Inscrito.ZONA, input}
             });
         } else if(xml.equals(Inscrito.TELEFONO)) {
             XML.redirectXML(response, XML.INGRESOS, new String[][]{
-                    {Inscrito.ID, request.getParameter(Inscrito.ID)},
-                    {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
-                    {Inscrito.MUNICIPIO, request.getParameter(Inscrito.MUNICIPIO)},
-                    {Inscrito.DIRECCION, request.getParameter(Inscrito.DIRECCION)},
-                    {Inscrito.ZONA, request.getParameter(Inscrito.ZONA)},
-                    {Inscrito.TELEFONO, input}
+                {Inscrito.ID, request.getParameter(Inscrito.ID)},
+                {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
+                {Inscrito.MUNICIPIO, request.getParameter(Inscrito.MUNICIPIO)},
+                {Inscrito.DIRECCION, request.getParameter(Inscrito.DIRECCION)},
+                {Inscrito.ZONA, request.getParameter(Inscrito.ZONA)},
+                {Inscrito.TELEFONO, input}
             });
         } else if(xml.equals(Inscrito.INGRESOS)) {
             XML.redirectXML(response, XML.INTEGRANTES, new String[][]{
-                    {Inscrito.ID, request.getParameter(Inscrito.ID)},
-                    {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
-                    {Inscrito.MUNICIPIO, request.getParameter(Inscrito.MUNICIPIO)},
-                    {Inscrito.DIRECCION, request.getParameter(Inscrito.DIRECCION)},
-                    {Inscrito.ZONA, request.getParameter(Inscrito.ZONA)},
-                    {Inscrito.TELEFONO, request.getParameter(Inscrito.TELEFONO)},
-                    {Inscrito.INGRESOS, input}
+                {Inscrito.ID, request.getParameter(Inscrito.ID)},
+                {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
+                {Inscrito.MUNICIPIO, request.getParameter(Inscrito.MUNICIPIO)},
+                {Inscrito.DIRECCION, request.getParameter(Inscrito.DIRECCION)},
+                {Inscrito.ZONA, request.getParameter(Inscrito.ZONA)},
+                {Inscrito.TELEFONO, request.getParameter(Inscrito.TELEFONO)},
+                {Inscrito.INGRESOS, input}
             });
         } else if(xml.equals(Inscrito.INTEGRANTES)) {
             XML.redirectXML(response, XML.TIPO_ID_INTEGRANTE, new String[][]{
-                    {Inscrito.ID, request.getParameter(Inscrito.ID)},
-                    {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
-                    {Inscrito.MUNICIPIO, request.getParameter(Inscrito.MUNICIPIO)},
-                    {Inscrito.DIRECCION, request.getParameter(Inscrito.DIRECCION)},
-                    {Inscrito.ZONA, request.getParameter(Inscrito.ZONA)},
-                    {Inscrito.TELEFONO, request.getParameter(Inscrito.TELEFONO)},
-                    {Inscrito.INGRESOS, request.getParameter(Inscrito.INGRESOS)},
-                    {Inscrito.INTEGRANTES, input}
+                {Inscrito.ID, request.getParameter(Inscrito.ID)},
+                {Inscrito.DEPARTAMENTO, request.getParameter(Inscrito.DEPARTAMENTO)},
+                {Inscrito.MUNICIPIO, request.getParameter(Inscrito.MUNICIPIO)},
+                {Inscrito.DIRECCION, request.getParameter(Inscrito.DIRECCION)},
+                {Inscrito.ZONA, request.getParameter(Inscrito.ZONA)},
+                {Inscrito.TELEFONO, request.getParameter(Inscrito.TELEFONO)},
+                {Inscrito.INGRESOS, request.getParameter(Inscrito.INGRESOS)},
+                {Inscrito.INTEGRANTES, input}
             });
         }
     }

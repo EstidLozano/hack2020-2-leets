@@ -39,7 +39,7 @@ public class Inscrito {
     }
 
     public Inscrito(String departamento, String direccion, List<Integer> familiares,
-                    int id, int ingresos, String municipio, int telefono, String zona) {
+                int id, int ingresos, String municipio, int telefono, String zona) {
         this.departamento = departamento;
         this.direccion = direccion;
         this.familiares = familiares;
