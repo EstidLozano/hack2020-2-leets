@@ -29,7 +29,7 @@ public class Flow {
             if(input.equals("uno")) {
                 XML.redirectXML(response, XML.REGISTRO);
             } else if(input.equals("dos")) {
-                XML.redirectXML(response, XML.CAMPAÑAS);
+                XML.redirectXML(response, XML.CAMPANAS);
             } else {
                 XML.redirectXML(response, XML.ERROR, new String[][]{
                         {"causa", "Opción desconocida"}

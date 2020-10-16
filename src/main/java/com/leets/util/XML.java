@@ -26,7 +26,7 @@ public class XML {
             ID_INTEGRANTE = "http://cloud.zang.io/data/inboundxml/e9667bda8c7777fb138eef586c8a46b44b8e3e04",
             PARENTESCO = "http://cloud.zang.io/data/inboundxml/18e92b51aefe99affbaae5b708a92a690556713d",
             ID = "https://cloud.zang.io/data/inboundxml/a9cf5acff407463ff56b04bea16ec9df084cd486",
-            CAMPAÑAS = "https://cloud.zang.io/data/inboundxml/9bb44cf6c1e4dfc6730860783a950b42fa2ef8b4",
+            CAMPANAS = "https://cloud.zang.io/data/inboundxml/9bb44cf6c1e4dfc6730860783a950b42fa2ef8b4",
             ACTUALIZAR = "https://cloud.zang.io/data/inboundxml/9e13b03d6c2dae9cb4e519e7b552737453158739",
             ESTADO = "https://cloud.zang.io/data/inboundxml/1ac440a6b3d93fb7c9419517e8b8a4b706dd5642",
             SATISFACION = "https://cloud.zang.io/data/inboundxml/910f300caeed28799b8cc0784d05d28626e50da7",
