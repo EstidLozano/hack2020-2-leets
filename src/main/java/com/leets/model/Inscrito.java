@@ -10,7 +10,7 @@ public class Inscrito {
 	
     public final static String
             DEPARTAMENTO = "departamento",
-            DIRECCION = "dirección",
+            DIRECCION = "direccion",
             ESTRATO = "estrato",
             F_NACIMIENTO = "f_nacimiento",
             INTEGRANTES = "familiares",
@@ -18,8 +18,8 @@ public class Inscrito {
             INGRESOS = "ingresos",
             MUNICIPIO = "municipio",
             NOMBRE = "nombre",
-            SISBEN = "sisbén",
-            TELEFONO = "teléfono",
+            SISBEN = "sisben",
+            TELEFONO = "telefono",
             ZONA = "zona";
 
     private String departamento;
